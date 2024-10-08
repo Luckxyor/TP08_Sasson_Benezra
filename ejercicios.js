@@ -7,7 +7,7 @@ function ej1(){
     if (FechaAhora.getMonth() < FechaNacimiento.getMonth() || (FechaAhora.getMonth() == FechaNacimiento.getMonth() && FechaAhora.getDate() < FechaNacimiento.getDate())) {
         Edad--;
     }
-    alert(`Hola ${Nombre}, tienes ${Edad} años`)
+    imprimirResultado(`Hola ${Nombre}, tienes ${Edad} años`);
 }
 
 function ej2(){
@@ -17,10 +17,10 @@ function ej2(){
     const frutaElegidaMay=capitalizeFirstLetter(frutaElegida);
     const busqueda=frutas.includes(frutaElegidaMay);
     if(busqueda){
-        alert(`SI!!!!!!!!! TENEMOS ${frutaElegidaMay}`)
+        imprimirResultado(`SI!!!!!!!!! TENEMOS ${frutaElegidaMay}`);
     }
     else{
-        alert(`No tenemos ${frutaElegidaMay} :(`)
+        imprimirResultado(`No tenemos ${frutaElegidaMay} :(`);
     }
 }
 
@@ -65,8 +65,34 @@ function ej4(){
     }
 }
 
+function ej5(){
+    const numeros=[2,4,6,8,10];
+    const multiplicados=numeros.map(numero=>numero*2);
+    imprimirResultado(multiplicados);
+}
+
 function ej6(){
+    let piso, piramideA='', piramideB='';
     for (let i = 1; i < 6; i++) {
-        console.log('*'*i)
+        piso="";
+        for(let repeticion=0; repeticion<i; repeticion++){
+            piso+='*';
+        }
+        piramideA += piso + '<br>';
     }
+    
+    for (let i = 1; i <= 5; i++) {
+        piso = '';
+
+        for (let j = 0; j < 5 - i; j++) {
+            piso += '-';
+        }
+        
+        for (let repeticion = 0; repeticion < (2 * i - 1); repeticion++) {
+            piso += '*';
+        }
+        
+        piramideB += piso + '<br>';
+    }
+    imprimirResultado(piramideA + '<br>' + piramideB);
 }
