@@ -96,3 +96,43 @@ function ej6(){
     }
     imprimirResultado(piramideA + '<br>' + piramideB);
 }
+
+function ej7(){
+    let nombres= prompt("Ingrese nombres separados por comas, sin espacios");
+    nombresSeparados=nombres.split(',');
+    const nombresA=nombresSeparados.filter(nombre=>nombre.charAt(0)==='A');
+    imprimirResultado(nombresA);
+}
+
+function ej8(){
+    let cadena=prompt("Ingrese el texto que usted desea señor/a");
+    let cambiar=prompt("Ingrese la palabra que desea cambiar");
+    let reemplazo=prompt("Ingrese la palabra por cual desea cambiar");
+    const textoCambiado=cadena.replaceAll(cambiar, reemplazo);
+    imprimirResultado(textoCambiado);
+}
+
+function ej9(){
+    let texto=prompt("Ingrese un texto");
+    let numero=prompt("Ingrese la cantidad de caracteres que desea mantener desde el principio");
+    const nuevoTexto=texto.slice(0,numero);
+    imprimirResultado(nuevoTexto);
+}
+
+function ej10(){
+    let elementos=prompt("Ingrese una lista de elementos separados por comas, sin espacios");
+    const listaArray=elementos.split(',');
+    const elementosConGuion=listaArray.join("-");
+    imprimirResultado(elementosConGuion);
+}
+
+function ej11(){
+    const pedidos = prompt("Ingrese los pedidos en el formato 'nombre:total', separados por coma, sin espacios");
+    const listaDePedidos = pedidos.split(",");
+    let total = 0;
+    for(const pedido of listaDePedidos){
+        const [elemento, precio] = pedido.split(":");
+        total += parseFloat(precio);
+    }
+    imprimirResultado(total);
+}
